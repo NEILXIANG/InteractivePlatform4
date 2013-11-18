@@ -1,6 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
+sheldonchen:
   name: sheldonchen
   hashed_password: secret
   salt: salt

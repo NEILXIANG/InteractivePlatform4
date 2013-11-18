@@ -4,7 +4,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-    @user = users(:one)
+    @user = users(:sheldonchen)
 
     @input_attributes = {
         :name                   => "sheldon",
