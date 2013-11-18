@@ -28,10 +28,32 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    if logger.debug?
+      logger.debug("realname=" + params[:realname])
+      logger.debug("sex=" + params[:sex])
+      logger.debug("qq=" + params[:qq])
+      logger.debug("email=" + params[:email])
+      logger.debug("telphone=" + params[:telphone])
+      logger.debug("recommend_man=" + params[:recommend_man])
+    end
+
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "用户 #{@user.name} 注册成功." }
-        format.json { render action: 'show', status: :created, location: @user }
+        @userinfo = UserInfo.new(
+            :real_name      => params[:realname],
+            :sex            => params[:sex],
+            :qq             => params[:qq],
+            :email          => params[:email],
+            :telphone       => params[:telphone],
+            :recommend_man  => params[:recommend_man],
+            :user_id        => @user.id
+        )
+
+        if @userinfo.save
+          format.html { redirect_to @user, notice: "用户 #{@user.name} 注册成功." }
+          format.json { render action: 'show', status: :created, location: @user }
+        end
+
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -71,6 +93,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:name, :password, :password_confirmation,
+        :realname, :sex, :qq, :email, :telphone)
     end
 end
