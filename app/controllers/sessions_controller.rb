@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to user_url, :notice => "已退出"
+    redirect_to login_url, :notice => "已退出"
   end
 end

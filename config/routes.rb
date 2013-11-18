@@ -4,7 +4,7 @@ InteractivePlatform4::Application.routes.draw do
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
-    delete 'logout' => :destory
+    delete 'logout' => :destroy
   end
   resources :users
 
