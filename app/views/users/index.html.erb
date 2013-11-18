@@ -1,0 +1,27 @@
+<h1>Listing users</h1>
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to '详细信息', user %></td>
+        <td><%= link_to '编辑', edit_user_path(user) %></td>
+        <td><%= link_to '删除', user, method: :delete, data: { confirm: '你确定吗?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
