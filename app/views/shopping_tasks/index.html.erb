@@ -1,0 +1,35 @@
+<h1>Listing shopping_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Url</th>
+      <th>Type</th>
+      <th>Score</th>
+      <th>Remind</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopping_tasks.each do |shopping_task| %>
+      <tr>
+        <td><%= shopping_task.price %></td>
+        <td><%= shopping_task.url %></td>
+        <td><%= shopping_task.type %></td>
+        <td><%= shopping_task.score %></td>
+        <td><%= shopping_task.remind %></td>
+        <td><%= link_to 'Show', shopping_task %></td>
+        <td><%= link_to 'Edit', edit_shopping_task_path(shopping_task) %></td>
+        <td><%= link_to 'Destroy', shopping_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shopping task', new_shopping_task_path %>
