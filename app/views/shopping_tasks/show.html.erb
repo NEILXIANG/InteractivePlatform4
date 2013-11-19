@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @shopping_task.price %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @shopping_task.url %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @shopping_task.type %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @shopping_task.score %>
+</p>
+
+<p>
+  <strong>Remind:</strong>
+  <%= @shopping_task.remind %>
+</p>
+
+<%= link_to 'Edit', edit_shopping_task_path(@shopping_task) %> |
+<%= link_to 'Back', shopping_tasks_path %>
