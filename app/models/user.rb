@@ -5,9 +5,11 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
   has_one :user_info
   has_many :user_logs
+  has_many :posts
 
   validates :name, :presence => true, :uniqueness => true
   validates :password, :confirmation => true
+
   attr_accessor :password_confimation
   attr_reader   :password
 

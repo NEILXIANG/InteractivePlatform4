@@ -3,13 +3,13 @@
 one:
   price: 1
   url: MyString
-  type: 1
+  deploy_type: 1
   score: 1
   remind: MyString
 
 two:
   price: 1
   url: MyString
-  type: 1
+  deploy_type: 1
   score: 1
   remind: MyString
