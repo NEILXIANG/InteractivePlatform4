@@ -18,7 +18,7 @@ class ShoppingTasksControllerTest < ActionController::TestCase
 
   test "should create shopping_task" do
     assert_difference('ShoppingTask.count') do
-      post :create, shopping_task: { price: @shopping_task.price, remind: @shopping_task.remind, score: @shopping_task.score, type: @shopping_task.type, url: @shopping_task.url }
+      post :create, shopping_task: { price: @shopping_task.price, remind: @shopping_task.remind, score: @shopping_task.score, deploy_type: @shopping_task.deploy_type, url: @shopping_task.url }
     end
 
     assert_redirected_to shopping_task_path(assigns(:shopping_task))
@@ -35,7 +35,7 @@ class ShoppingTasksControllerTest < ActionController::TestCase
   end
 
   test "should update shopping_task" do
-    patch :update, id: @shopping_task, shopping_task: { price: @shopping_task.price, remind: @shopping_task.remind, score: @shopping_task.score, type: @shopping_task.type, url: @shopping_task.url }
+    patch :update, id: @shopping_task, shopping_task: { price: @shopping_task.price, remind: @shopping_task.remind, score: @shopping_task.score, deploy_type: @shopping_task.deploy_type, url: @shopping_task.url }
     assert_redirected_to shopping_task_path(assigns(:shopping_task))
   end
 
