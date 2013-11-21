@@ -1,4 +1,5 @@
 InteractivePlatform4::Application.routes.draw do
+  get "message_sender/send"
   resources :posts
 
   resources :shopping_tasks
