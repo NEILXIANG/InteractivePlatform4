@@ -10,7 +10,7 @@ InteractivePlatform4::Application.routes.draw do
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
-    delete 'logout' => :destroy
+    get 'logout' => :destroy
   end
   resources :users
 
@@ -18,7 +18,7 @@ InteractivePlatform4::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'welcome#index', :as => 'welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

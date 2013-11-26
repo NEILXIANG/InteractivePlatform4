@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # 登录接口
     if user = User.authenticate(params[:name], params[:password])
       session[:user_id] = user.id
 
@@ -28,12 +29,12 @@ class SessionsController < ApplicationController
 
       redirect_to admin_url
     else
-      redirect_to login_url, :alert => "用户名或密码不正确"
+      redirect_to welcome_path, :alert => "用户名或密码不正确"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_url, :notice => "已退出"
+    redirect_to welcome_path, :status => 200, :notice => "已退出"
   end
 end
