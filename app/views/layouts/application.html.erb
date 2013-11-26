@@ -19,28 +19,27 @@
       <!--header_nav begin-->
       <div id="header_nav">
           <div class="bound">
-              <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请 <a class="orange_link" href="">登录</a> | <a class="orange_link" href="">免费注册</a></div>
-                <div id="head_nav_right" class="right">
-                  <a class="red_link" href="">我的帐号</a> |
-                    <a href="">任务中心</a> |
-                    <a href="">推广赚钱</a> |
-                    <a href="">帮助中心</a> |
-                    <a href="">礼品专区</a>
-                </div>
+              <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请
+              <%= link_to "登录", "", class: "orange_link" %> |
+              <%= link_to "免费注册", "", class: "orange_link" %>
+              </div>
+              <div id="head_nav_right" class="right">
+              <%= link_to "我的帐号", "", class: "red_link" %> |
+              <%= link_to "任务中心", "" %> |
+              <%= link_to "推广赚钱", "" %> |
+              <%= link_to "帮助中心", "" %> |
+              <%= link_to "礼品专区", "" %>
+              </div>
             </div>
         </div>
         <!--header_nav end-->
         <!--header_logo begin-->
         <div id="head_logo" class="bound clearfix">
           <div id="head_logo_area" class="left">
-          <a href="" title="logo">
-            <%= image_tag("logo.png", :alt => "company") %>
-          </a>
+            <%= link_to(image_tag("logo.png", :alt => "company"), "") %>
           </div>
           <div id="head_logo_other" class=" right">
-          <a href="" title="ad area">
-            <%= image_tag("headad.jpg", :alt => "ad") %>
-          </a>
+            <%= link_to(image_tag("headad.jpg", :alt => "ad"), "") %>
           </div>
         </div>
         <!--header_logo end-->
@@ -48,13 +47,13 @@
         <div id="nav_wrap">
           <div id="nav" class="bound clearfix">
               <ul>
-                  <li><a class="current" href="">首页</a></li>
-                    <li><a href="">淘宝互动</a></li>
-                    <li><a href="">拍拍互动</a></li>
-                    <li><a href="">货币购买</a></li>
-                    <li><a href="">服务交易</a></li>
-                    <li><a href="">卖家服务</a></li>
-                    <li><a href="">家园</a></li>
+                  <li><%= link_to "首页", "" , class: "current" %></li>
+                  <li><%= link_to "淘宝互动", "" %></li>
+                  <li><%= link_to "拍拍互动", "" %></li>
+                  <li><%= link_to "货币购买", "" %></li>
+                  <li><%= link_to "服务交易", "" %></li>
+                  <li><%= link_to "卖家服务", "" %></li>
+                  <li><%= link_to "家园", "" %></li>
                 </ul>
             </div>
         </div>
@@ -68,12 +67,12 @@
     <div id="footer" class="clearfix">
       <div id="footer_wrap" class="bound">
             <div id="footer_nav" class="left">
-                <a href="">首页</a> |
-                <a href="">关于我们</a> |
-                <a href="">媒体报道</a> |
-                <a href="">网站规则</a> |
-                <a href="">帮助中心</a> |
-                <a href="">资料查询</a>
+                <%= link_to "首页", "" %> |
+                <%= link_to "关于我们", "" %> |
+                <%= link_to "媒体报道", "" %> |
+                <%= link_to "网站规则", "" %> |
+                <%= link_to "帮助中心", "" %> |
+                <%= link_to "资料查询", "" %>
             </div>
             <div id="footer_copyright" class="right">粤ICP备13034299号 Copyright © 2009 - 2013 @ ALL Rights Reserved </div>
         </div>
