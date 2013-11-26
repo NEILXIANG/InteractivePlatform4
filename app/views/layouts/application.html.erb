@@ -1,14 +1,83 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>InteractivePlatform4</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>商家互动平台</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#flowimg').jshowoff({changeSpeed: 1200,speed: 6000,links: true,controls: false,effect: 'slideLeft',hoverPause:false});
+    });
+  </script>
 </head>
 <body>
+  <!--header begin-->
+  <div id="header">
+      <!--header_nav begin-->
+      <div id="header_nav">
+          <div class="bound">
+              <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请 <a class="orange_link" href="">登录</a> | <a class="orange_link" href="">免费注册</a></div>
+                <div id="head_nav_right" class="right">
+                  <a class="red_link" href="">我的帐号</a> |
+                    <a href="">任务中心</a> |
+                    <a href="">推广赚钱</a> |
+                    <a href="">帮助中心</a> |
+                    <a href="">礼品专区</a>
+                </div>
+            </div>
+        </div>
+        <!--header_nav end-->
+        <!--header_logo begin-->
+        <div id="head_logo" class="bound clearfix">
+          <div id="head_logo_area" class="left">
+          <a href="" title="logo">
+            <%= image_tag("logo.png", :alt => "company") %>
+          </a>
+          </div>
+          <div id="head_logo_other" class=" right">
+          <a href="" title="ad area">
+            <%= image_tag("headad.jpg", :alt => "ad") %>
+          </a>
+          </div>
+        </div>
+        <!--header_logo end-->
+        <!-- nav_wrap begin -->
+        <div id="nav_wrap">
+          <div id="nav" class="bound clearfix">
+              <ul>
+                  <li><a class="current" href="">首页</a></li>
+                    <li><a href="">淘宝互动</a></li>
+                    <li><a href="">拍拍互动</a></li>
+                    <li><a href="">货币购买</a></li>
+                    <li><a href="">服务交易</a></li>
+                    <li><a href="">卖家服务</a></li>
+                    <li><a href="">家园</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- nav_wrap end -->
+    </div>
+    <!--header end-->
 
 <%= yield %>
 
+    <!--footer begin-->
+    <div id="footer" class="clearfix">
+      <div id="footer_wrap" class="bound">
+            <div id="footer_nav" class="left">
+                <a href="">首页</a> |
+                <a href="">关于我们</a> |
+                <a href="">媒体报道</a> |
+                <a href="">网站规则</a> |
+                <a href="">帮助中心</a> |
+                <a href="">资料查询</a>
+            </div>
+            <div id="footer_copyright" class="right">粤ICP备13034299号 Copyright © 2009 - 2013 @ ALL Rights Reserved </div>
+        </div>
+    </div>
+    <!--footer end-->
 </body>
 </html>
