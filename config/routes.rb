@@ -5,6 +5,7 @@ InteractivePlatform4::Application.routes.draw do
   resources :shopping_tasks
 
   get "welcome/index"
+  get "admin/center"
   get 'admin' => "admin#index"
 
   controller :sessions do

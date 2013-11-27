@@ -20,11 +20,11 @@
       <div id="header_nav">
           <div class="bound">
               <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请
-              <%= link_to "登录", "", class: "orange_link" %> |
-              <%= link_to "免费注册", "", class: "orange_link" %>
+              <%= link_to "登录", {:controller => 'welcome', :action => 'index'}, class: "orange_link" %> |
+              <%= link_to "免费注册", {:controller => 'users', :action => 'new'}, class: "orange_link" %>
               </div>
               <div id="head_nav_right" class="right">
-              <%= link_to "我的帐号", "", class: "red_link" %> |
+              <%= link_to "我的帐号", {:controller => 'admin', :action => 'center'}, class: "red_link" %> |
               <%= link_to "任务中心", "" %> |
               <%= link_to "推广赚钱", "" %> |
               <%= link_to "帮助中心", "" %> |
