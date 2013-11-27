@@ -26,14 +26,14 @@ class SessionsControllerTest < ActionController::TestCase
   test "should not login" do
    sheldon = users(:sheldonchen)
    post :create, :name => 'sheldonchen', :password => 'private'
-   assert_redirected_to login_url
+   assert_redirected_to welcome_path
    assert_equal nil, session[:user_id]
   end
 
   # 测试用户退出的情况
   test "should logout" do
    delete :destroy
-   assert_redirected_to login_url
+   assert_response :success
   end
 
 end

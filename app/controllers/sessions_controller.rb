@@ -35,6 +35,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to welcome_path, :status => 200, :notice => "已退出"
+    # redirect_to welcome_path#, :status => 200, :notice => "已退出"
+    # render 'welcome/index'
   end
 end
