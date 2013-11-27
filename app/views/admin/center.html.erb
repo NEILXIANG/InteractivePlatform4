@@ -1,0 +1,158 @@
+    <!--container begin-->
+    <div id="container" class="bound">
+        <div class="content_user">
+            <div class="content-user-tp"><b></b></div>
+            <div class="usercenter_left left">
+                <div class="user-subnav">
+                    <dl class="user-subnav-group">
+                        <dt><a class="item-wrap item-current" href=""><span>首页</span></a></dt>
+                    </dl>
+                    <b class="user-subnav-spl"></b>
+                    <dl class="user-subnav-group">
+                        <dt><span class="item-wrap"><span>应用信息</span></span></dt>
+                        <dd><a class="item-wrap" href="myLog.asp"><span>交易明细</span></a></dd>
+                        <dd><a class="item-wrap" href="useedit.asp"><span>资料修改</span></a></dd>
+                        <dd><a class="item-wrap" href="smsList.asp"><span>站内短信</span></a></dd>
+                    </dl>
+                    <b class="user-subnav-spl"></b>
+                    <dl class="user-subnav-group">
+                        <dt><span class="item-wrap"><span>我的货币</span></span></dt>
+                        <dd><a class="item-wrap" href="chong.asp"><span>账户充值</span></a></dd>
+                        <dd><a class="item-wrap" href="tixian.asp"><span>提现申请</span></a></dd>
+                        <dd><a class="item-wrap" href="/platform/gift.asp"><span>申请VIP</span></a></dd>
+                    </dl>
+                    <b class="user-subnav-spl"></b>
+                    <dl class="user-subnav-group">
+                        <dt><span class="item-wrap"><span>账号管理</span></span></dt>
+                        <dd><a class="item-wrap" href="UserProtect.asp"><span>密码管理</span></a></dd>
+                        <dd><a class="item-wrap" href="myTie.asp"><span>我的家园</span></a></dd>
+                        <dd><a class="item-wrap" href="NewPushAd.asp"><span>我的推广</span></a></dd>
+                    </dl>
+
+                    <b class="user-subnav-spl"></b>
+                    <dl class="user-subnav-group">
+                        <dt><span class="item-wrap"><span>投诉中心</span></span></dt>
+                        <dd><a class="item-wrap" href="myShensuList.asp"><span>投诉列表</span></a></dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="usercenter_right left">
+                <div class="user-mc-crumb">
+                    <a class="itm1" href=""><span>货币购买</span></a>
+                    <a class="itm2" href=""><span>账户充值</span></a>
+                    <a class="itm3" href=""><span>推广中心</span></a>
+                    <a class="itm4" href=""><span>帮助中心</span></a>
+                </div>
+                <div class="user-mc-row">
+                    <div class="user-welcome">
+                        <h1 class="wel"><strong>dsa123</strong>，欢迎您！ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a style="color:#1467d9" href="" target="_blank">安全防骗小知识，猛戳我查看</a>
+                        </h1>
+                        <ul class="status-info">
+                            <li>你上次登录的IP:<%= @user_log.ip %></li>
+                            <li>城市:广东省广州市</li>
+                            <li>上次登录时间:2013-10-1 14:33:17</li>
+                            <li>登录次数:68次</li>
+                            <li><a href="#">如果有不符合请联系客服</a></li>
+                        </ul>
+                        <ul class="account-info">
+                            <li>账户余额:<em>1</em>元<a href=""></a></li>
+                            <li>账户谷粒:<em>2</em>点<a href=""></a></li>
+                            <li>用户积分:<em>20</em></li>
+                        </ul>
+                        <div class="notice">
+                            <div class="notice-hd"><h3>每日公告</h3><a class="more" href="/jiayuan/list-3-1.html">更多</a></div>
+                            <div class="notice-bd">
+                                <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="1" scrolldelay="100" direction="up" height="18px">
+                                    <ul>
+                                        <li><a href="" target="_blank"><span style="margin-left:0px; font-weight:bold;">请勿直接像支付宝收款人付款</span></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" target="_blank"><span style="margin-left:0px;">支付宝的红包怎么生成？</span></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" target="_blank"><span style="margin-left:0px; font-weight:bold;">掌握核心技术优化宝贝排名，</span></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" target="_blank"><span style="margin-left:0px;">【发奖喽！】蛇年第36期任</span></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="" target="_blank"><span style="margin-left:0px;">第一百期推广达人发奖公告</span></a></li>
+                                    </ul>
+                                </marquee>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-mc-row">
+                    <div style="float:left;width:458px;">
+                        <div class="user-r-box" style="margin-bottom: 15px;">
+                            <div class="user-r-box-hd"><h2>服务中心</h2></div>
+                            <div class="user-r-box-bd">
+                                <ul class="user-index-service-brick">
+                                    <li class="b1">
+                                        <a href="">
+                                            <strong>消保服务</strong>
+                                            <span>加入消保更安心</span>
+                                        </a>
+                                    </li>
+                                    <li class="b2">
+                                        <a href="">
+                                            <strong>我要销量</strong>
+                                            <span>发布任务轻松赚取销量</span>
+                                        </a>
+                                    </li>
+                                    <li class="b3">
+                                        <a href="">
+                                            <strong>我要佣金</strong>
+                                            <span>接手任务轻松赚取佣金</span>
+                                        </a>
+                                    </li>
+                                    <li class="b4">
+                                        <a href="">
+                                            <strong>购买谷粒</strong>
+                                            <span>直接发布任务最省事</span>
+                                        </a>
+                                    </li>
+                                    <li class="b5">
+                                        <a href="">
+                                            <strong>信誉托管</strong>
+                                            <span>坐等上钻店铺开始赚钱</span>
+                                        </a>
+                                    </li>
+                                    <li class="b6">
+                                        <a href="p">
+                                            <strong>爆款学习</strong>
+                                            <span>打造爆款不降权</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="user-r-box" style="margin-bottom: 15px;">
+                            <div class="user-r-box-hd"><h2>提醒信息</h2></div>
+                            <div class="user-r-box-bd">
+                                <ul class="user-index-tixing-msg">
+                                    <li class="type1">
+                                        <span class="type">淘宝互动区</span>
+                                        <div class="summary">暂无未完成的已发任务！</div>
+                                        <div class="summary">暂无未完成的已接任务！</div>
+                                    </li>
+                                    <li class="type2">
+                                        <span class="type">拍拍互动区</span>
+                                        <div class="summary">暂无未完成的已发任务！</div>
+                                        <div class="summary">暂无未完成的已接任务！</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <%= image_tag 'sub_bann.png' %>
+                    </div>
+                </div>
+            </div>
+        </div><!--content_user end-->
+    </div>
+    <!--container end-->

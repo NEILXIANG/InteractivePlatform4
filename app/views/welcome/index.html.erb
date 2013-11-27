@@ -7,23 +7,29 @@
                         <%= link_to "", "", class: "reg_btn" %>
                     </div>
                     <div class="login_info_wrap">
-                        <form method="" action="">
+                        <%= form_tag "/login" do %>
                         <table id="login_wrap_table">
                             <tr>
                                 <td>用户名：</td>
-                                <td colspan="2"><input type="text" class="login_input_text" /></td>
+                                <td colspan="2">
+                                    <%= text_field_tag :name, nil, class: "login_input_text" %>
+                                </td>
                             </tr>
                             <tr>
                                 <td>密&nbsp;码：</td>
-                                <td colspan="2"><input type="password" class="login_input_text" /></td>
+                                <td colspan="2">
+                                    <%= password_field_tag :password, nil, class: "login_input_text" %>
+                                </td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><button type="submit" class="login_btn"></button></td>
+                                <td>
+                                    <%= submit_tag "登录" %>
+                                </td>
                                 <td><input class="check_input" type="checkbox" >记住我 <a class="orange_link" href="">忘记密码？</a></td>
                             </tr>
                         </table>
-                        </form>
+                        <% end %>
                     </div>
                     <div class="login_wrap_tip">一个真实的淘宝信誉互动平台期待你的加入！</div>
                 </div>

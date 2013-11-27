@@ -11,50 +11,66 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "姓名" %>:
-    <%= f.text_field :name, :size => 40 %>
-  </div>
-  <div class="field">
-    <%= f.label :password, "密码" %>:
-    <%= f.password_field :password, :size => 40 %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "确认密码" %>:
-    <%= f.password_field :password_confirmationm, :size => 40 %>
-  </div>
-
-  <div class="field">
-    个人资料
-  </div>
-  <div class="field">
-    <label for="realname">真实姓名：</label>
-    <%= text_field_tag :realname, params[:realname] %>
-  </div>
-  <div class="field">
-    <label for="sex">性别:</label>
-    <%= radio_button_tag(:sex, 0) %>
-    <%= label_tag(:sex, "男") %>
-    <%= radio_button_tag(:sex, 1) %>
-    <%= label_tag(:sex, "女") %>
-  </div>
-  <div class="field">
-    <label for="qq">QQ号码：</label>
-    <%= text_field_tag :qq, params[:qq] %>
-  </div>
-  <div class="field">
-    <label for="email">Email：</label>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <label for="telphone">手机号码：</label>
-    <%= text_field_tag :telphone, params[:telphone] %>
-  </div>
-  <div class="field">
-    <label for="recommend_man">推荐人：</label>
-    <%= text_field_tag :recommend_man, params[:recommend_man] %>
-  </div>
-  <div class="actions">
-    <%= f.submit '新建' %>
-  </div>
+            <div class="reg_info_wrap">
+                <div class="reg-float">
+                    <h3>注册会员信息</h3>
+                    <p><%= image_tag 'dsjicon.png' %></p>
+                    <ul>
+                        <li><em>会员名：</em>
+                        <%= f.text_field :name, :size => 40, :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">请输入4-24位字符，支持中文、英文、数字。</font></span>
+                        </li>
+                        <li><em>登陆密码：</em>
+                        <%= f.password_field :password, :size => 40, :class => 'reg-input' %>
+                        <span></span>
+                        </li>
+                        <li><em>提示信息：</em><span id="chkpassnote">&nbsp;&nbsp;6-16个字符，请使用字母加数字或符号的组合密码，不能单独使用字母、数字或符号。</span></li>
+                        <li><em>确认密码：</em>
+                        <%= f.password_field :password_confirmationm, :size => 40, :class => 'reg-input' %>
+                            <span id="chkpass">*请重复输入登陆密码</span>
+                        </li>
+                        <li><em>安全交易码：</em>
+                        <%= f.password_field :code, :class => 'reg-input' %>
+                            <span> *提现和更改资料和内部交易专用，请不要和登录密码相同</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="reg_info_wrap">
+                <div class="reg-float">
+                    <h3>您的个人资料，请认真填写真实资料</h3>
+                    <p><%= image_tag 'dsjicon.png' %></p>
+                    <ul>
+                        <li><em>真实姓名：</em>
+                        <%= text_field_tag :realname, params[:realname], :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">请输入真实姓名,用于财务通提现，请谨慎填写</font></span>
+                        </li>
+                        <li><em>性别：</em>
+                        <%= radio_button_tag(:sex, 0) %>
+                        <%= label_tag(:sex, "男") %>
+                        <%= radio_button_tag(:sex, 1) %>
+                        <%= label_tag(:sex, "女") %>
+                        <span></span>
+                        </li>
+                        <li><em>QQ号码：</em>
+                        <%= text_field_tag :qq, params[:qq], :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">请输入正确的QQ号码以方便平台上的用户及时能够联系</font></span>
+                        </li>
+                        <li><em>电子邮箱：</em>
+                        <%= text_field_tag :email, params[:email], :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">请输入电子邮箱 [注：邮箱填写后不能修改，请谨慎填写您的常用邮箱。</font></span>
+                        </li>
+                        <li><em>手机号码：</em>
+                        <%= text_field_tag :telphone, params[:telphone], :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">请输入您的手机号码，一个手机号码只能注册认证一个账号</font></span>
+                        </li>
+                        <li><em>推荐人：</em>
+                        <%= text_field_tag :recommend_man, params[:recommend_man], :class => 'reg-input' %>
+                            <span>*<font size="2" id="chkusername">没有推荐人可留空！</font></span>
+                        </li>
+                    </ul>
+                    <p style="margin-left:176px; padding-top:15px;;">
+                      <%= f.submit '', :class => 'reg_wrap_btn' %>
+                    </p>
+                </div>
 <% end %>
