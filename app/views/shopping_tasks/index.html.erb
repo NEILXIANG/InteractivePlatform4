@@ -1,35 +1,51 @@
-<h1>Listing shopping_tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Price</th>
-      <th>Url</th>
-      <th>Type</th>
-      <th>Score</th>
-      <th>Remind</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shopping_tasks.each do |shopping_task| %>
-      <tr>
-        <td><%= shopping_task.price %></td>
-        <td><%= shopping_task.url %></td>
-        <td><%= shopping_task.deploy_type %></td>
-        <td><%= shopping_task.score %></td>
-        <td><%= shopping_task.remind %></td>
-        <td><%= link_to 'Show', shopping_task %></td>
-        <td><%= link_to 'Edit', edit_shopping_task_path(shopping_task) %></td>
-        <td><%= link_to 'Destroy', shopping_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Shopping task', new_shopping_task_path %>
+<!--container begin-->
+  <div id="container" class="bound">
+	<div class="userinfo">
+      	<h2>账户信息</h2>
+          <p>
+          尊敬的 <em>dsa123</em>，欢迎您!
+           存款余额：<a href=""><em>1</em></a>元， 谷粒：<a href=""><em>2</em></a>个， 积分：<em>20</em>， 推广积分：<em>0</em>    VIP：否  <a href=""><em>立刻申请</em></a> 
+          </p>
+      </div><!--userinfo_wrap end-->
+      <div class="news_wrap">
+      	<h2>新闻中心</h2>
+          <ul class="clearfix"> 	
+			<li>·<a href="" title="请勿直接像支付宝收款人付款，必须进入官网后进行充值">请勿直接像支付宝收款人</a>    <span>2013-11-21</span></li>
+              <li>·<a href="" title="支付宝的红包怎么生成？">支付宝的红包怎么生成？</a>    <span>2013-11-20</span></li>
+              <li>·<a href="" title="【发奖喽！】蛇年第36期任务排行榜颁奖!">【发奖喽！】蛇年第36</a>    <span>2013-10-14</span></li>
+              <li>·<a href="" title="【发奖喽！】蛇年第36期任务排行榜颁奖!">【发奖喽！】蛇年第36</a>    <span>2013-10-14</span></li>
+          </ul>
+      </div><!--news_wrap end-->
+      <div><%= link_to(image_tag('hudongad.jpg'), '') %></div>
+      <div class="task_wrap">
+      	<div class="task_menu">
+          	<ul>
+              	<li class="task-menu01"><a class="current" href="">互动中心</a></li>
+                  <li class="task-menu02"><a href="">发布任务</a></li>
+                  <li class="task-menu03"><a href="">已接任务</a></li>
+                  <li class="task-menu04"><a href="">已发任务</a></li>
+                  <li class="task-menu05"><a href="">任务管家</a></li>
+                  <li class="task-menu06"><a href="">买号管理</a></li>
+                  <li class="task-menu07"><a href=""> 掌柜名绑定</a></li>
+                  <li class="task-menu08"><a href="">购买货币</a></li>
+              </ul>
+          </div>
+      </div><!--task_wrap end-->
+      <div class="task_sub">
+          <ul class="clearfix">
+              <li><a href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">任务大厅</a></li>
+              <li><a href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">1-30元专区</a></li>
+              <li><a href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">31-100专区</a></li>
+              <li><a href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">101以上</a></li>
+			<li><a href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">500以上</a></li>
+              <li><a class="sub_current" href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">所有等待接手任务</a></li>
+              <li><a class="sub_current" href="Javascript:void(0)" onclick="refreshtask('taobao_list.html');">刷新任务</a></li>
+			<li><input id="CheckboxTask" type="checkbox" onclick="">自动接任务(<a href="" target="_blank" style="color:#848484;">点击进入配置</a>)</li>
+          </ul>
+      </div><!--task_sub end-->
+      <div class="task_list">
+        <%= render 'task_list' %>
+          <!--<iframe id="taskurl" src="task_list.html.erb" allowtransparency="true" frameborder="0" scrolling="no" height="800px" width="100%" align="center" onload="Javascript:SetCwinHeight()">						</iframe>-->
+      </div><!--task_list end-->
+</div>
+<!--container end-->
