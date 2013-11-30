@@ -6,6 +6,8 @@ InteractivePlatform4::Application.routes.draw do
 
   get "welcome/index"
   get "admin/center"
+  get "admin/password"
+  post "admin/password"
   get 'admin' => "admin#index"
 
   controller :sessions do

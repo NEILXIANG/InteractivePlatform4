@@ -20,7 +20,7 @@
       <div id="header_nav">
           <div class="bound">
               <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请
-              <%= link_to "登录", {:controller => 'welcome', :action => 'index'}, class: "orange_link" %> |
+              <%= link_to "登录", {:controller => 'sessions', :action => 'destroy'}, class: "orange_link" %> |
               <%= link_to "免费注册", {:controller => 'users', :action => 'new'}, class: "orange_link" %>
               </div>
               <div id="head_nav_right" class="right">
