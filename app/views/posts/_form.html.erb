@@ -10,20 +10,113 @@
       </ul>
     </div>
   <% end %>
+  
+<!--container begin-->
+<div id="container" class="bound">
+  <div class="bbs_nav clearfix">
+    <h4>当前位置：<a href="/jiayuan/">首页</a> &gt; 浏览帖子</h4>
+    <p>交流版块：
+      <a href="list-1-1.html">新手入门</a>
+      <a href="list-2-1.html">有问必答</a> <a href="list-3-1.html">官方公告</a>
+      <a href="list-4-1.html">技巧交流</a> <a href="list-5-1.html">投诉建议</a>
+      <a href="list-6-1.html">经验交流</a> <a href="list-27-1.html">淘宝SEO</a>
+    </p>
+  </div>
+  <div class="bbs_sub clearfix">
+    <h3><span>全部显示</span>	
+      <a href="/jiayuan/" style="color:#006ca7;">全部</a>  |  
+      <a href="Searchforumdisplay.asp?fid=0&amp;orderby=Good">精华</a>  | 
+      <a href="Searchforumdisplay.asp?fid=0&amp;orderby=Hot">热门</a>
+    </h3>
+    <p class="bbs_search">论坛搜索：
+      <input type="text" name="Key" id="Key" class="rev-search-input">
+      <%= link_to image_tag('bbs_search_btn.png'), '', {:style => 'vertical-align:bottom; margin-left:5px; margin-bottom:2px;'} %>
+    </p>
+    <p class="bbs_send"><%= link_to image_tag('newbbs_btn.png'), '', {:style => 'margin-left:10px;'} %></p>
+  </div>
+  <div class="bbs_title clearfix">
+    <h3>
+      <%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] 
+      <%= image_tag 'bbs-icon2.jpg'%>
+      <span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">骗子出没，假冒客服要求转账或是索要密码，谨防受骗</span>
+      <em style="color:#ff4800; font-size:10px;">38</em><em style="color:#ff4800;  font-size:10px;">/5077</em>
+    </h3>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+
+  <div class="bbs-content clearfix">
+
+    <div class="bbs-left">
+      <!--bbs-lc begin-->
+      <div class="bbs-lc">
+        <div class="bbs-lc-T clearfix">
+          <dl class="clearfix">
+            <dd>标题：</dd>
+            <dd><%= f.text_field :title %></dd>
+          </dl>
+          <h4><!--<p>1楼</p>--><p style="color:#999999;">2013-3-15 11:25:00</p></h4>
+        </div>
+        <div class="bbs-lc-C">
+          <dd>内容：</dd>
+          <dd><%= f.text_field :content %></dd>
+        </div>
+        <div class="collect_reply">
+          <%= f.submit '发表' %>
+        </div>
+      </div><!--bbs-lc end-->
+      <div class="clear"></div>
+		
+      <div class="pager_wrap">
+        <div id="pagination" class="pagination left">
+          <a href="#" class="prev">&lt;</a>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <span class="current">3</span>
+          <a href="#">4</a><a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <span>...</span>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next">&gt;</a>
+        </div>
+        <div class="right jumppage"><span>跳转：<input size="3" type="text" /></span><span>页</span><a href="">GO</a></div>
+      </div><!--pager_wrap-->
+    </div><!--bbs-left end-->
+
+    <div class="bbs-right">
+      <!--bbs-news st-->
+      <div class="bbs-news">
+        <div class="bbs-n-t clearfix">
+          <h4>热门帖子</h4>
+          <p><a href="Searchforumdisplay.Asp?fid=&amp;orderby=Hot" style="color:#006ca7;">更多</a></p>
+        </div>
+        <div class="bbs-n-l">
+          <ul>
+            <li>·<a href="view-15-1.html">谷得网·万人互动之葵花宝典·</a> </li>
+            <li>·<a href="view-16248-1.html">任务图标都是什么意思？</a> </li>  
+          </ul>
+        </div>
+      </div>
+      <!--bbs-news end-->
+      <!--bbs-news st-->
+      <div class="bbs-news">
+        <div class="bbs-n-t clearfix">
+          <h4>精华帖子</h4>
+          <p><a href="Searchforumdisplay.Asp?fid=&amp;orderby=Good" style="color:#006ca7;">更多</a></p>
+        </div>
+        <div class="bbs-n-l">
+          <ul>
+            <li>·<a href="view-18990-1.html">关于发布方平台点发货，淘宝却</a> </li>
+            <li>·<a href="view-18989-1.html">平台新推出的“服务交易”还是</a> </li>
+          </ul>
+        </div>
+      </div>
+      <!--bbs-news end-->
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+<!--container end-->
+
 <% end %>

@@ -24,7 +24,7 @@
                     <b class="user-subnav-spl"></b>
                     <dl class="user-subnav-group">
                         <dt><span class="item-wrap"><span>账号管理</span></span></dt>
-                        <dd><a class="item-wrap" href="UserProtect.asp"><span>密码管理</span></a></dd>
+                        <dd><%= link_to '密码管理', {:controller => 'admin', :action => 'password'}, :class => 'item-wrap' %></dd>
                         <dd><a class="item-wrap" href="myTie.asp"><span>我的家园</span></a></dd>
                         <dd><a class="item-wrap" href="NewPushAd.asp"><span>我的推广</span></a></dd>
                     </dl>
@@ -50,7 +50,7 @@
                         <a style="color:#1467d9" href="" target="_blank">安全防骗小知识，猛戳我查看</a>
                         </h1>
                         <ul class="status-info">
-                            <li>你上次登录的IP:<%= @user_log.ip %></li>
+                            <li>你上次登录的IP:<%= @user_log.ip unless @user_log == nil %></li>
                             <li>城市:广东省广州市</li>
                             <li>上次登录时间:2013-10-1 14:33:17</li>
                             <li>登录次数:68次</li>

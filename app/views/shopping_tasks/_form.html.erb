@@ -1,4 +1,5 @@
 <%= form_for(@shopping_task) do |f| %>
+  
   <% if @shopping_task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@shopping_task.errors.count, "error") %> prohibited this shopping_task from being saved:</h2>
@@ -10,28 +11,314 @@
       </ul>
     </div>
   <% end %>
+  
+  <!--container begin-->
+  <div id="container" class="bound">
+  	<div class="userinfo_wrap">
+        	<h2>账户信息</h2>
+            <p>
+            尊敬的 <em>dsa123</em>，欢迎您!
+             存款余额：<a href=""><em>1</em></a>元， 谷粒：<a href=""><em>2</em></a>个， 积分：<em>20</em>， 推广积分：<em>0</em>    VIP：否  <a href=""><em>立刻申请</em></a> 
+            </p>
+    </div><!--userinfo_wrap end-->
+    <div class="news_wrap">
+    	<h2>新闻中心</h2>
+      <ul class="clearfix"> 	
+        <li>·<a href="" title="请勿直接像支付宝收款人付款，必须进入官网后进行充值">请勿直接像支付宝收款人</a>    <span>2013-11-21</span></li>
+        <li>·<a href="" title="支付宝的红包怎么生成？">支付宝的红包怎么生成？</a>    <span>2013-11-20</span></li>
+        <li>·<a href="" title="【发奖喽！】蛇年第36期任务排行榜颁奖!">【发奖喽！】蛇年第36</a>    <span>2013-10-14</span></li>
+        <li>·<a href="" title="【发奖喽！】蛇年第36期任务排行榜颁奖!">【发奖喽！】蛇年第36</a>    <span>2013-10-14</span></li>
+      </ul>
+    </div><!--news_wrap end-->
+    <div><a href=""><img src="images/hudongad.jpg" /></a></div>
+    <div class="task_wrap">
+    	<div class="task_menu">
+      	<ul>
+        	<li class="task-menu01"><a href="">互动中心</a></li>
+          <li class="task-menu02"><%= link_to '发布任务', {:controller => 'shopping_tasks', :action => 'new' }, :class => 'current' %></li>
+          <li class="task-menu03"><a href="">已接任务</a></li>
+          <li class="task-menu04"><a href="">已发任务</a></li>
+          <li class="task-menu05"><a href="">任务管家</a></li>
+          <li class="task-menu06"><a href="">买号管理</a></li>
+          <li class="task-menu07"><a href=""> 掌柜名绑定</a></li>
+          <li class="task-menu08"><a href="">购买货币</a></li>
+        </ul>
+      </div>
+    </div><!--task_wrap end-->
+    <div class="task_sub">
+    	<div class="task_tip">
+  			<p style="font-weight:bold; color:#eb6100;">把您店铺的商品发布出来，让互动信誉的朋友帮您购买，从而获得信誉的提升。</p>
+  			<p>发布前请注意一下事情：</p>
+  			<p>1. 您想发布任务的时候，必须保证您拥有足够的谷粒，每次发布都将减掉一个谷粒。 </p>
+  			<p>2. 发布时需要您站内拥有1元以上的存款，发布后，有人接到您的任务时会作为购买商品款返回给您。 </p>
+  		</div>
+    </div><!--task_sub end-->
+  	<div class="task_publish_sub clearfix">
+  		<ul>
+  			<li class="publish_title"><em>淘宝</em>  发布任务</li>
+  			<li><a class="pub_current" href="">任务发布</a></li>
+  			<li><a href="">定时投放任务</a></li>
+  			<li><a href="">套餐任务</a></li>
+  			<li><a href="">来路任务</a></li>
+  			<li><a href="">批量任务</a></li>
+  		</ul>
+  	</div>
+  	<div class="publish_content">
+  		<form>
+  		<div class="publish_table">
+  			<table width="1002px" border="0" cellspacing="0" cellpadding="0" valign="middle">
+  				<tbody>
+  				<tr>
+  					<td class="publish_td1">您的掌柜名：</td>
+  					<td class="publish_td2">dsa123<span style="color:#808080; margin-left:10px;">(旺旺帐号)接任务的朋友用来联系和确认您的身份用的。</span></td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">购物车：</td>
+  					<td class="publish_td2">
+  						<span style="margin-right: 10px;"><input name="Linknum" type="radio" id="" value="1" onclick="setid(1)" checked="checked">不使用购物车</span>
+  						<span style="margin-right: 20px;"><input name="Linknum" type="radio" id="" value="2" onclick="setid(2)">购物车1</span>
+  						<span style="margin-right: 20px;"><input name="Linknum" type="radio" id="" value="3" onclick="setid(3)">购物车2</span>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">任务详细：</td>
+  					<td class="publish_td2">
+  						<p><em>任务1</em>价格：
+                <%= f.number_field :price, :class => 'pub_input', :width => 64 %>
+  							<em>任务1</em>商品的地址：
+                <%= f.text_field :url, :class => 'pub_input', :width => 290 %>
+  						</p>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">修改价格：</td>
+  					<td class="publish_td2">
+  						<input name="ModPrice" type="checkbox" id="ModPrice" value="1" style="margin-right:5px;"> 
+  						商品价格+邮费&gt;任务商品担保价格时，请勾选！改价不要超过商品价格的50%，支付宝使用率低于50%既被淘宝视为信用炒作处理。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">追加货币：</td>
+  					<td class="publish_td2">
+  						<input name="IfReward" type="checkbox" id="IfReward" style="margin-right:5px;" value="1">
+  						<input name="RewardGuli" class="pub_input" id="RewardGuli" style="width:55px;">   
+  						追加悬赏谷粒数越多，更易被人接手，刷钻效率越高！最多追加20个。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">所在地发布类型：</td>
+  					<td class="publish_td2">
+  						<span style="margin-right: 50px;">
+                <%= f.radio_button :deploy_type, :value => 1 %>马上<font color="#000000">带</font>字好评(立即收货)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 2 %>马上不带字好评(立即收货)
+  						</span><br>
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 3 %><%= image_tag 'qiche.png' %>1天后<font color="#00000">带</font>字好评(消耗+1倍谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 4 %><%= image_tag 'qiche.png' %>1天后不带字好评(消耗+1倍谷粒)
+  						</span><br>
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 5 %><%= image_tag 'qiche.png' %>2天后<font color="#00000">带</font>字好评(消耗+2倍谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 6 %><%= image_tag 'qiche.png' %>2天后不带字好评(消耗+2倍谷粒)
+  						</span><br>
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 7 %><%= image_tag 'qiche.png' %>3天后<font color="#00000">带</font>字好评(消耗+3倍谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 8 %><%= image_tag 'qiche.png' %>3天后不带字好评(消耗+3倍谷粒)
+  						</span><br>	
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 9 %><%= image_tag 'qiche.png' %>4天后<font color="#00000">带</font>字好评(消耗X2倍谷粒+4谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 10 %><%= image_tag 'qiche.png' %>4天后不带字好评(消耗X2倍谷粒+4谷粒)
+  						</span><br>
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 11 %><%= image_tag 'qiche.png' %>5天后<font color="#00000">带</font>字好评(消耗X2倍谷粒+5谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 12 %><%= image_tag 'qiche.png' %>5天后不带字好评(消耗X2倍谷粒+5谷粒)
+  						</span><br>
+  						<span style="margin-right: 15px;">
+                <%= f.radio_button :deploy_type, :value => 13 %><%= image_tag 'qiche.png' %>6天后<font color="#00000">带</font>字好评(消耗X2倍谷粒+6谷粒)
+  						</span>
+  						<span>
+                <%= f.radio_button :deploy_type, :value => 14 %><%= image_tag 'qiche.png' %>6天后不带字好评(消耗X2倍谷粒+6谷粒)
+  						</span><br>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">动态评分：</td>
+  					<td class="publish_td2">
+  						<span style="margin-right:50px;">
+                <%= f.radio_button :score, :value => 1 %>全部打5分
+              </span>
+  						<span>
+                <%= f.radio_button :score, :value => 2 %>全部不打分
+              </span>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">卖家提醒语：</td>
+  					<td class="publish_td2">
+  						<input name="ifsms" type="checkbox" id="ifsms" value="1" onclick="">
+  						<em>您可在此给接手方留言提醒，留言提醒不能作为申诉理由，但总不理会留言的接手方客户酌情处罚。</em>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">规定评论内容：</td>
+  					<td class="publish_td2">
+  						<textarea rows="5" cols="80"></textarea>
+  					</td>
+  				</tr>	
+  				<tr>
+  					<td class="publish_td1">真实快递任务：</td>
+  					<td class="publish_td2">
+  						<input name="ExpressTask" type="checkbox" id="ExpressTask" style="margin-right:5px;" value="1">
+  						<a href="" target="_blank">
+  							<font color="#FF5400">快递公司为您量身打造快递单号，淘宝跟踪物流，完全一致，底单保留，打造真正不可删除的完美信誉，每单扣除3元。</font>
+  						</a>
+  					</td>
+  				</tr>
+  				<tr>
+  				<td class="publish_td1">淘金币：</td>
+  				<td class="publish_td2">
+  					<input name="TaoJB" type="checkbox" id="TaoJB" value="1" style="margin-right:5px;vertical-align: top;margin-top:10px;">
+  					<input name="TaoJBNum" class="pub_input" type="text" id="TaoJBNum" style="width:90px;" maxlength="18">
+  					额外支付给接手方,每10金币对应
+  					<em>0.1</em>
+  					谷粒,必须为10的倍数。
+  				</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">规定收货地址：</td>
+  					<td class="publish_td2">
+  						<input name="NeedModAddr" type="checkbox" id="NeedModAddr" value="1" onclick="Showsms('NeedModAddr','addrlist')">
+  						您可以规定接手方在淘宝购买商品时填写您指定的收货地址。额外支付
+  						<em>0.5</em>
+  						个谷粒将奖励给接手方。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">分享：</td>
+  					<td class="publish_td2">
+  						<input name="eShare" type="radio" id="eShare" value="0" checked="checked" onclick="showTable('Sharetable1','none')">不分享
+  	  					<input name="eShare" type="radio" id="eShare" value="1" onclick="showTable('Sharetable1','none')">实物分享(+<em>0.2</em>谷粒)
+  						<input name="eShare" type="radio" id="eShare" value="2" onclick="showTable('Sharetable1','block')">
+  						虚拟分享(+<em>0.5</em>谷粒)  &nbsp;淘宝购物分享，分享内容同好评内容，额外支付谷粒将奖励给接手方。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">实名任务：</td>
+  					<td class="publish_td2">
+  						<input name="ifname" type="checkbox" id="ifname" value="1" style="margin-right:5px;">
+  						限制接手买号必须是通过了支付宝实名认证的才可接手此任务，需额外支付
+  						<em>0.5</em>
+  						个谷粒给接手方
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">任务审核：</td>
+  					<td class="publish_td2">
+  						<input name="ifname" type="checkbox" id="ifname" value="1" style="margin-right:5px;">
+  						接手方接任务后,要您亲自审核后,接手方才可看到商品地址。额外支付的
+  						<em>0.5</em>
+  						个谷粒将奖励给接手方。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">需要旺旺聊天：</td>
+  					<td class="publish_td2">
+  						<input name="ifname" type="checkbox" id="ifname" value="1" style="margin-right:5px;">
+  						要求接手方先在旺旺上聊几句， 强烈建议开启审核先使用QQ约定好 。需额外支付
+  						<em>1</em>
+  						个谷粒将奖励给接手方。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">限制接手人：</td>
+  					<td class="publish_td2">
+  						<input name="JieTaskNum" type="radio" value="1">
+  						一天接一个（消耗
+  						<em>1</em>谷粒）
+  						<input name="JieTaskNum" type="radio" value="2">一天接2个（消耗<em>0.5</em>谷粒）您可以设置接手人在1天内接手您发布任务的次数，需额外支付谷粒
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">真实签收任务：</td>
+  					<td class="publish_td2">
+  						<input name="ifTrueTask" type="checkbox" id="ifTrueTask" style="margin-right:5px;" value="1">
+  						<input name="TrueTask" type="radio" value="1">全国（消耗<em>1.5</em>谷粒）
+  						<input name="TrueTask" type="radio" value="2">同省（消耗<em>2</em>谷粒）<font color="#999">
+  						<a href="" target="_blank">*什么是真实签收任务</a></font> 不了解的用户请勿选择，了解详情。
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">指定接任务地区：</td>
+  					<td class="publish_td2">
+  						<input name="ifJiePlace" type="checkbox" id="ifJiePlace" style="margin-right:5px;" value="1" onclick="">
+  						选择省市:   
+  						<select name="province" id="selProvince">  
+  							<option value="北京市">北京市</option>
+  							<option value="上海市">上海市</option>
+  							<option value="天津市">天津市</option>
+  							<option value="重庆市">重庆市</option>
+  							<option value="河北省">河北省</option>
+  							<option value="山西省">山西省</option>
+  							<option value="内蒙古">内蒙古</option>
+  							<option value="辽宁省">辽宁省</option>
+  							<option value="吉林省">吉林省</option>
+  							<option value="黑龙江省">黑龙江省</option>
+  							<option value="江苏省">江苏省</option>
+  							<option value="浙江省">浙江省</option>
+  							<option value="安徽省">安徽省</option>
+  							<option value="福建省">福建省</option>
+  							<option value="江西省">江西省</option>
+  							<option value="山东省">山东省</option>
+  							<option value="河南省">河南省</option>
+  							<option value="湖北省">湖北省</option>
+  							<option value="湖南省">湖南省</option>
+  							<option value="广东省">广东省</option>
+  							<option value="广西">广西</option>
+  							<option value="海南省">海南省</option>
+  							<option value="四川省">四川省</option>
+  							<option value="贵州省">贵州省</option>
+  							<option value="云南省">云南省</option>
+  							<option value="西藏">西藏</option>
+  							<option value="陕西省">陕西省</option>
+  							<option value="甘肃省">甘肃省</option>
+  							<option value="宁夏">宁夏</option>
+  							<option value="青海省">青海省</option>
+  							<option value="新疆">新疆</option>
+  							<option value="香港">香港</option>
+  							<option value="澳门">澳门</option>
+  							<option value="台湾省">台湾省</option>
+  							<option value="其它">其它</option>
+  						</select>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td class="publish_td1">保存到任务模板：</td>
+  					<td class="publish_td2">
+  						<input name="ifTrueTask" type="checkbox" id="ifTrueTask" style="margin-right:5px;" value="1">
+  						<input name="TempName" type="text" class="pub_input" id="TempName" style="width:150px;">
+  						 实现快捷方便的发布任务，方便下次发布，输入自定义名称即可
+  					</td>
+  				</tr>
+  				</tbody>
+  			</table>
+  		</div>
+  		<div class="publish_button_wrap">
+        <%= f.submit '', :class => 'publish_button' %>
+  		</div>
+  		</form>
+  	</div>
+  </div>
+  <!--container end-->
 
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :deploy_type %><br>
-    <%= f.number_field :deploy_type %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.number_field :score %>
-  </div>
-  <div class="field">
-    <%= f.label :remind %><br>
-    <%= f.text_field :remind %>
-  </div>
-  <div class="actions">
-    <%= f.submit '新建' %>
-  </div>
 <% end %>

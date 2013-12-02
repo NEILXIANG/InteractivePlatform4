@@ -20,7 +20,7 @@
       <div id="header_nav">
           <div class="bound">
               <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请
-              <%= link_to "登录", {:controller => 'welcome', :action => 'index'}, class: "orange_link" %> |
+              <%= link_to "登录", {:controller => 'sessions', :action => 'destroy'}, class: "orange_link" %> |
               <%= link_to "免费注册", {:controller => 'users', :action => 'new'}, class: "orange_link" %>
               </div>
               <div id="head_nav_right" class="right">
@@ -47,8 +47,8 @@
         <div id="nav_wrap">
           <div id="nav" class="bound clearfix">
               <ul>
-                  <li><%= link_to "首页", "" , class: "current" %></li>
-                  <li><%= link_to "淘宝互动", "" %></li>
+                  <li><%= link_to "首页", {:controller => 'welcome', :action => 'home'} %></li>
+                  <li><%= link_to "淘宝互动", {:controller => 'shopping_tasks', :action => 'index'} %></li>
                   <li><%= link_to "拍拍互动", "" %></li>
                   <li><%= link_to "货币购买", "" %></li>
                   <li><%= link_to "服务交易", "" %></li>
