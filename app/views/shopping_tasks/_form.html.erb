@@ -35,7 +35,7 @@
     	<div class="task_menu">
       	<ul>
         	<li class="task-menu01"><a href="">互动中心</a></li>
-          <li class="task-menu02"><a class="current" href="">发布任务</a></li>
+          <li class="task-menu02"><%= link_to '发布任务', {:controller => 'shopping_tasks', :action => 'new' }, :class => 'current' %></li>
           <li class="task-menu03"><a href="">已接任务</a></li>
           <li class="task-menu04"><a href="">已发任务</a></li>
           <li class="task-menu05"><a href="">任务管家</a></li>
