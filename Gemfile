@@ -6,6 +6,10 @@ gem 'rails', '4.0.1'
 # Use jdbcsqlite3 as the database for Active Record
 gem 'activerecord-jdbcsqlite3-adapter'
 
+group :production do
+  gem 'activerecord-jdbcmysql-adapter'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

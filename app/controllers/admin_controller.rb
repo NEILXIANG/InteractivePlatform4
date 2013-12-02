@@ -9,6 +9,41 @@ class AdminController < ApplicationController
     # 用户中心
     set_user_information
   end
+  
+  def password
+    # 密码管理
+    if logger.debug?
+      logger.debug('code=%s' % [params[:code]])
+      logger.debug('password=%s' % [params[:password]])
+      logger.debug('password_confirmation=%s' % [params[:password_confirmation]])
+    end
+    
+    code = params[:code]
+    password = params[:password]
+    password_confirmation = params[:password_confirmation]
+    
+    if code.blank? || password.blank? || password_confirmation.blank?
+      # TODO 返回给用户不能为空的提示
+      return
+    end
+    
+    if password != password_confirmation
+      # TODO 返回用户两个密码不同的提示
+      return
+    end
+    
+    user = User.find(session[:user_id])
+    
+    if user.code != code
+      # TODO 返回用户安全交易码不正确的提示
+      return
+    end
+    
+    user.password = password
+    user.save
+    
+    redirect_to welcome_path
+  end
 
   private
 

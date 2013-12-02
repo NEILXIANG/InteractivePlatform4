@@ -16,5 +16,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  username: root
+  password:
+  url: "jdbc:mysql://localhost:3306/InteractivePlatform?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"
+  properties: # specific to com.mysql.jdbc.Driver
+    socketTimeout:  60000
+    connectTimeout: 60000
