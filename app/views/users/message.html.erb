@@ -1,0 +1,41 @@
+<!--container begin-->
+<div id="container" class="bound">
+  <div class="content_user">
+    <%= render 'usercenter_left' %>
+
+    <div class="usercenter_right left">
+      <%= render 'usercenter_right_top', :object => @page_name %>
+
+      <div class="usercenter_right_cen">
+        <div class="user_inside_content">
+          <div class="user_inside_sub">
+            <ul>
+              <li><a class="current_m" href="">收信箱</a></li>
+              <li><a href="">已发信息</a></li>
+            </ul>
+          </div><!--user_inside_sub-->
+          <div class="user_inside_table">
+            <table border="0" width="730">
+              <tbody>
+              <tr class="urtable_top">
+                <td width="45">
+                  <input type="checkbox" name="checkbox2" value="checkbox" onclick="checkboxselect(this.form.Id,this.form.checkbox2.checked)">全选
+                </td>
+                <td width="104">发件人</td>
+                <td width="328">主题</td>
+                <td width="182">日期</td>
+                <td>操作</td>
+              </tr>
+              <tr>
+                <td colspan="8" align="center" valign="middle">您暂时没站内信息</td>
+              </tr>
+              </tbody>
+            </table>
+          </div><!--user_inside_table-->
+        </div><!--user_inside_content-->
+      </div><!--usercenter_right_cen-->
+
+    </div><!--usercenter_right end-->
+  </div><!--content_user end-->
+</div>
+<!--container end-->

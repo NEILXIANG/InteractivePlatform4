@@ -10,7 +10,6 @@ InteractivePlatform4::Application.routes.draw do
     get 'home'  => :home
   end
 
-
   controller :admin do
     get 'center' => :center
     get 'password' => :password
@@ -23,7 +22,12 @@ InteractivePlatform4::Application.routes.draw do
     get 'logout' => :destroy
   end
 
-  resources :users
+  get 'message' => 'users#message'
+
+  resources :users do
+    get 'transaction' => 'users#transaction'
+    get 'recharge' => 'users#recharge'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

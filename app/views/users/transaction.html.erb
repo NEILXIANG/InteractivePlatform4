@@ -1,0 +1,117 @@
+<!--container begin-->
+<div id="container" class="bound">
+  <div class="content_user">
+    <%= render 'users/usercenter_left' %>
+
+    <div class="usercenter_right left">
+      <%= render 'users/usercenter_right_top', :object => @page_name %>
+
+      <div class="usercenter_right_cen">
+        <div class="user_inside_content">
+          <div class="user_inside_sub">
+            <ul>
+              <li><a class="current_m" href="">交易明细</a></li>
+              <li><a href="">任务记录</a></li>
+              <li><a href="">充值记录</a></li>
+              <li><a href="">购买记录</a></li>
+              <li><a href="">增值记录</a></li>
+              <li><a href="">提现记录</a></li>
+              <li><a href="">兑换记录</a></li>
+              <li><a href="">领奖记录</a></li>
+              <li><a href="">托管明细</a></li>
+            </ul>
+          </div>
+          <!--user_inside_sub-->
+          <div class="user_inside_table">
+            <table border="0" style="margin-bottom:30px;">
+              <form action="" method="post">
+                <tbody>
+                <tr>
+                  <td width="100" align="right">交易时间：</td>
+                  <td>
+                    <select name="TradeTime" id="TradeTime" style="height:25px;">
+                      <option value="">选择时间</option>
+                      <option value="0">今天的数据</option>
+                      <option value="7">一个星期</option>
+                      <option value="30">一个月</option>
+                    </select>
+                  </td>
+                  <td width="80"></td>
+                  <td align="right">交易方式：</td>
+                  <td>
+                    <select name="TradeType" id="TradeType" style="height:25px;">
+                      <option value="">选择方式</option>
+                      <option value="接任务">接任务</option>
+                      <option value="发任务">发任务</option>
+                      <option value="充值">充值</option>
+                      <option value="提现">提现</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100" align="right">交易状态：</td>
+                  <td>
+                    <select name="TradeTime" id="TradeTime" style="height:25px;">
+                      <option value="">选择状态</option>
+                      <option value="1">成功</option>
+                      <option value="0">失败</option>
+                    </select>
+                  </td>
+                  <td width="80"></td>
+                  <td align="right">交易金额：</td>
+                  <td>
+                    <input name="TradePrice1" id="TradePrice1" style="height:20px; line-height:20px; width:50px; margin-left:2px;">
+                    至
+                    <input name="TradePrice2" id="TradePrice2" style="height:20px; line-height:20px; width:50px; margin-left:2px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right">ID号：</td>
+                  <td><input name="Key" id="Key" style="height:20px; line-height:20px; width:200px; margin-left:2px;">
+                  </td>
+                  <td>
+                  </td>
+                  <td align="right"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input name="iss" style="width:80px; height:30px; background:#f4a34d; color:#fff; border:none; cursor:pointer;" type="submit" value="确定搜索">
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </form>
+            </table>
+            <table border="0" width="730">
+              <tbody>
+              <tr class="urtable_top">
+                <td width="100">类型</td>
+                <td width="160">任务时间</td>
+                <td width="200">任务ID</td>
+                <td width="100">货币变化</td>
+                <td width="100">现有货币</td>
+                <td width="100">存款变化</td>
+                <td width="100">现有存款</td>
+                <td width="80">状态</td>
+              </tr>
+              <tr>
+                <td colspan="8" align="center" valign="middle"><img src="images/emptyinfo.png">没有找到记录，请调整搜索条件。</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--user_inside_table-->
+        </div>
+        <!--user_inside_content-->
+      </div>
+      <!--usercenter_right_cen-->
+
+    </div>
+    <!--usercenter_right end-->
+  </div>
+  <!--content_user end-->
+</div>
+<!--container end-->

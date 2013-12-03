@@ -64,6 +64,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    # TODO 重写用户资料更新的方法
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "用户 #{@user.name} 更新成功." }
@@ -83,6 +84,21 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def message
+    # TODO 用户的站内短信
+    @page_name = '站内短信'
+  end
+
+  def transaction
+    # TODO 用户交易明细
+    @page_name = '交易明细'
+  end
+
+  def recharge
+    # TODO 帐户充值
+    @page_name = '帐户充值'
   end
 
   private

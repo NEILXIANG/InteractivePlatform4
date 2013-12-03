@@ -1,6 +1,202 @@
-<h1>Editing user</h1>
+<!--container begin-->
+<div id="container" class="bound">
+  <div class="content_user">
+    <%= render 'users/usercenter_left' %>
 
-<%= render 'form' %>
+    <div class="usercenter_right left">
+      <%= render 'users/usercenter_right_top' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+      <div class="usercenter_right_cen">
+        <div class="user_inside_content">
+          <form>
+            <div class="ur_data_table">
+              <table width="740" border="0" cellspacing="0" cellpadding="0" valign="middle">
+                <tbody>
+                <tr>
+                  <td class="data_td1">用户名：</td>
+                  <td class="data_td2">dsa123</td>
+                </tr>
+                <tr>
+                  <td class="data_td1">邮箱：</td>
+                  <td class="data_td2">534490***@qq.com</td>
+                </tr>
+                <tr>
+                  <td class="data_td1">真实姓名：</td>
+                  <td class="data_td2">
+                    <input name="myzname" type="text" value="吴梓伟" class="user-inside-input">
+                    <span style="color:#808080; margin-left:10px;">请填写您的真实姓名。</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">性别：</td>
+                  <td class="data_td2">
+                    <input name="u_nv" type="radio" value="0" checked="">
+                    男士
+                    <input name="u_nv" type="radio" value="1">
+                    女士
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">手机号码：</td>
+                  <td class="data_td2">
+                    <input name="myshouji" type="text" value="15999970091" class="user-inside-input">
+                    <span style="color:#808080; margin-left:10px;">方便免费接收您定单信息，也可填写区号+小灵通。</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">所在地：</td>
+                  <td class="data_td2"><select name="mysheng" size="1">
+                    <option value="" selected="">----</option>
+                    <option value="北京">北京</option>
+                    <option value="香港">香港</option>
+                    <option value="澳门">澳门</option>
+                    <option value="台湾">台湾</option>
+                    <option value="上海">上海</option>
+                    <option value="广东">广东</option>
+                    <option value="山东">山东</option>
+                    <option value="四川">四川</option>
+                    <option value="福建">福建</option>
+                    <option value="江苏">江苏</option>
+                    <option value="浙江">浙江</option>
+                    <option value="天津">天津</option>
+                    <option value="重庆">重庆</option>
+                    <option value="河北">河北</option>
+                    <option value="河南">河南</option>
+                    <option value="黑龙江">黑龙江</option>
+                    <option value="吉林">吉林</option>
+                    <option value="辽宁">辽宁</option>
+                    <option value="内蒙古">内蒙古</option>
+                    <option value="海南">海南</option>
+                    <option value="山西">山西</option>
+                    <option value="陕西">陕西</option>
+                    <option value="安徽">安徽</option>
+                    <option value="江西">江西</option>
+                    <option value="甘肃">甘肃</option>
+                    <option value="新疆">新疆</option>
+                    <option value="湖北">湖北</option>
+                    <option value="湖南">湖南</option>
+                    <option value="云南">云南</option>
+                    <option value="广西">广西</option>
+                    <option value="宁夏">宁夏</option>
+                    <option value="贵州">贵州</option>
+                    <option value="青海">青海</option>
+                    <option value="西藏">西藏</option>
+                  </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">详细地址：</td>
+                  <td class="data_td2">
+                    <input name="mydizhi" type="text" value="" class="user-inside-input">
+                    <span style="color:#808080; margin-left:10px;">请输入您的详细地址(格式：XX市XX路XX号)。</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">QQ：</td>
+                  <td class="data_td2"><input name="myqq" type="text" value="534490112" class="user-inside-input"></td>
+                </tr>
+                <tr>
+                  <td class="data_td1">修改头像：</td>
+                  <td class="data_td2">
+                    <input name="mytouxiang" type="file" onchange="document.getElementById('previewImage').innerHTML = '&lt;img src=\''+this.value+'\' width=100 height=100  &gt;';">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">&nbsp;</td>
+                  <td class="data_td2">
+                    <b id="previewImage"><img src="images/userlogo.jpg" width="100" height="100">
+                    </b>
+
+                    <p style="color:#808080; margin-top:10px;">建议图片大小 :150px*150px,图片格式为.jpg，.gif，.bmp</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="data_td1">签收快递发货省份：</td>
+                  <td class="data_td2">
+                    <select name="FaPro">
+                      <option value="">请选择省</option>
+                      <option value="北京市">北京市</option>
+                      <option value="天津市">天津市</option>
+                      <option value="河北省">河北省</option>
+                      <option value="山西省">山西省</option>
+                      <option value="内蒙古自治区">内蒙古自治区</option>
+                      <option value="辽宁省">辽宁省</option>
+                      <option value="吉林省">吉林省</option>
+                      <option value="黑龙江省">黑龙江省</option>
+                      <option value="上海市">上海市</option>
+                      <option value="江苏省">江苏省</option>
+                      <option value="浙江省">浙江省</option>
+                      <option value="安徽省">安徽省</option>
+                      <option value="福建省">福建省</option>
+                      <option value="江西省">江西省</option>
+                      <option value="山东省">山东省</option>
+                      <option value="河南省">河南省</option>
+                      <option value="湖北省">湖北省</option>
+                      <option value="湖南省">湖南省</option>
+                      <option value="广东省">广东省</option>
+                      <option value="广西壮族自治区">广西壮族自治区</option>
+                      <option value="海南省">海南省</option>
+                      <option value="重庆市">重庆市</option>
+                      <option value="四川省">四川省</option>
+                      <option value="贵州省">贵州省</option>
+                      <option value="云南省">云南省</option>
+                      <option value="西藏自治区">西藏自治区</option>
+                      <option value="陕西省">陕西省</option>
+                      <option value="甘肃省">甘肃省</option>
+                      <option value="青海省">青海省</option>
+                      <option value="宁夏回族自治区">宁夏回族自治区</option>
+                      <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                      <option value="台湾省">台湾省</option>
+                      <option value="香港特别行政区">香港特别行政区</option>
+                      <option value="澳门特别行政区">澳门特别行政区</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">签收快递收货地址：</td>
+                  <td class="data_td2">
+                    <select id="city1" name="city1">
+                      <option value="" selected="">请选择</option>
+                    </select>
+                    <select id="city2" name="city2">
+                      <option value="" selected="">请选择</option>
+                    </select>
+                    <select id="city3" name="city3">
+                      <option value="" selected="">请选择</option>
+                    </select>
+                    <br><input name="city_value" type="text" value="" style="width:250px" class="user-inside-input">(请完成详细地址)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">安全交易码：</td>
+                  <td class="data_td2">
+                    <input name="mypass" type="password" class="user-inside-input"><font color="#FF0000">*</font>只有安全交易码正确后其他修改才能正常修改成功。
+                  </td>
+                </tr>
+                <tr>
+                  <td class="data_td1">验证码：</td>
+                  <td class="data_td2">
+                    <input name="byanzheng" type="text" class="user-inside-input">
+                    <span style="color:#808080; margin-left:10px;">请输入左边看到的数字</span>
+                    <input name="fanhuiurl" type="hidden" id="fanhuiurl" value="">
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ur_data_button_wrap">
+              <button class="ur_data_button" type="submit"></button>
+            </div>
+          </form>
+        </div>
+        <!--user_inside_content-->
+      </div>
+      <!--usercenter_right_cen-->
+
+    </div>
+    <!--usercenter_right end-->
+  </div>
+  <!--content_user end-->
+</div>
+<!--container end-->
