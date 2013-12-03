@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -25,6 +27,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    if logger.debug?
+      logger.debug("user_id=%s" % [session[:user_id]])
+    end
     @post.user_id = session[:user_id]
 
     respond_to do |format|

@@ -13,27 +13,7 @@
   
 <!--container begin-->
 <div id="container" class="bound">
-  <div class="bbs_nav clearfix">
-    <h4>当前位置：<a href="/jiayuan/">首页</a> &gt; 浏览帖子</h4>
-    <p>交流版块：
-      <a href="list-1-1.html">新手入门</a>
-      <a href="list-2-1.html">有问必答</a> <a href="list-3-1.html">官方公告</a>
-      <a href="list-4-1.html">技巧交流</a> <a href="list-5-1.html">投诉建议</a>
-      <a href="list-6-1.html">经验交流</a> <a href="list-27-1.html">淘宝SEO</a>
-    </p>
-  </div>
-  <div class="bbs_sub clearfix">
-    <h3><span>全部显示</span>	
-      <a href="/jiayuan/" style="color:#006ca7;">全部</a>  |  
-      <a href="Searchforumdisplay.asp?fid=0&amp;orderby=Good">精华</a>  | 
-      <a href="Searchforumdisplay.asp?fid=0&amp;orderby=Hot">热门</a>
-    </h3>
-    <p class="bbs_search">论坛搜索：
-      <input type="text" name="Key" id="Key" class="rev-search-input">
-      <%= link_to image_tag('bbs_search_btn.png'), '', {:style => 'vertical-align:bottom; margin-left:5px; margin-bottom:2px;'} %>
-    </p>
-    <p class="bbs_send"><%= link_to image_tag('newbbs_btn.png'), '', {:style => 'margin-left:10px;'} %></p>
-  </div>
+  <%= render 'bbs_head' %>
   <div class="bbs_title clearfix">
     <h3>
       <%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] 

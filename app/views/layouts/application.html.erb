@@ -19,9 +19,14 @@
       <!--header_nav begin-->
       <div id="header_nav">
           <div class="bound">
-              <div id="head_nav_left" class="left">亲，欢迎来到Company！ 请
-              <%= link_to "登录", {:controller => 'sessions', :action => 'destroy'}, class: "orange_link" %> |
-              <%= link_to "免费注册", {:controller => 'users', :action => 'new'}, class: "orange_link" %>
+              <div id="head_nav_left" class="left">亲，欢迎来到Company！
+              <% if @is_login %>
+                    <%= link_to "退出", {:controller => 'sessions', :action => 'destroy'}, class: 'orange_link' %>
+              <% else %>
+                    请
+                    <%= link_to "登录", {:controller => 'sessions', :action => 'create'}, class: "orange_link" %> |
+                    <%= link_to "免费注册", {:controller => 'users', :action => 'new'}, class: "orange_link" %>
+              <% end %>
               </div>
               <div id="head_nav_right" class="right">
               <%= link_to "我的帐号", {:controller => 'admin', :action => 'center'}, class: "red_link" %> |
@@ -53,7 +58,7 @@
                   <li><%= link_to "货币购买", "" %></li>
                   <li><%= link_to "服务交易", "" %></li>
                   <li><%= link_to "卖家服务", "" %></li>
-                  <li><%= link_to "家园", "" %></li>
+                  <li><%= link_to "家园", {:controller => 'posts', :action => 'index'} %></li>
                 </ul>
             </div>
         </div>

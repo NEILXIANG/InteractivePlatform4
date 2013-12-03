@@ -4,18 +4,25 @@ InteractivePlatform4::Application.routes.draw do
 
   resources :shopping_tasks
 
-  get "welcome/index"
-  get "welcome/home"
-  get "admin/center"
-  get "admin/password"
-  post "admin/password"
-  get 'admin' => "admin#index"
+  controller :welcome do
+    get 'login' => :index
+    get 'index' => :index
+    get 'home'  => :home
+  end
+
+
+  controller :admin do
+    get 'center' => :center
+    get 'password' => :password
+    get 'admin' => :index
+    post 'password' => :password
+  end
 
   controller :sessions do
-    get 'login' => :new
     post 'login' => :create
     get 'logout' => :destroy
   end
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
