@@ -12,6 +12,7 @@ class AdminController < ApplicationController
   
   def password
     # 密码管理
+    @page_name = '密码管理'
     if logger.debug?
       logger.debug('code=%s' % [params[:code]])
       logger.debug('password=%s' % [params[:password]])

@@ -1,102 +1,43 @@
-<% @posts.each do |post| %>
-<% end %>
-
 <!--container begin-->
-  <div id="container" class="bound">
-	<div class="bbs_nav clearfix">
-		<h4>当前位置：<a href="/jiayuan/">首页</a> &gt; 浏览帖子</h4>
-		<p>交流版块：
-			<a href="list-1-1.html">新手入门</a>
-			<a href="list-2-1.html">有问必答</a> <a href="list-3-1.html">官方公告</a>
-			<a href="list-4-1.html">技巧交流</a> <a href="list-5-1.html">投诉建议</a>
-			<a href="list-6-1.html">经验交流</a> <a href="list-27-1.html">淘宝SEO</a>
-		</p>
-	</div>
-	<div class="bbs_sub clearfix">
-      	<h3><span>全部显示</span>	
-			<a href="/jiayuan/" style="color:#006ca7;">全部</a>  |  
-			<a href="Searchforumdisplay.asp?fid=0&amp;orderby=Good">精华</a>  | 
-			<a href="Searchforumdisplay.asp?fid=0&amp;orderby=Hot">热门</a>
-		</h3>
-		<p class="bbs_search">论坛搜索：
-			<input type="text" name="Key" id="Key" class="rev-search-input">
-			<input type="image" style="vertical-align:bottom; margin-left:5px; margin-bottom:2px;" src="images/bbs_search_btn.png">
-		</p>
-          <p class="bbs_send"><%= link_to image_tag('newbbs_btn.png'), {:controller => 'posts', :action => 'new'} %> <a href="FaTie.asp?fid=0" style="margin-left:10px;"></p>
-      </div>
-	<div class="bbs_list_wrap">
-		<table width="1002" border="0">
-			<tbody>
-				<tr class="bbs-tr1">
-				<td class="bbs-td1" width="625">主题</td>
-				<td class="bbs-td2" width="115">所在版块</td>
-				<td class="bbs-td3" width="115">回复查看</td>
-				<td class="bbs-td4">最后发表</td>
-				</tr>
-				
-				
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ]<%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">骗子出没，假冒客服要求转账或是索要密码，谨防受骗</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">38/<em style="color:#ff4800;">5077</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">引领风尚</a></p><p style="color:#c4c4c4;">2013-11-28</p></td>
-				</tr>
-				
-				
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] <%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">请勿直接像支付宝收款人付款，必须进入官网后进行充值</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">18/<em style="color:#ff4800;">930</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">爱尚你在的生活</a></p><p style="color:#c4c4c4;">2013-11-26</p></td>
-				</tr>
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] <%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">骗子出没，假冒客服要求转账或是索要密码，谨防受骗</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">38/<em style="color:#ff4800;">5077</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">引领风尚</a></p><p style="color:#c4c4c4;">2013-11-28</p></td>
-				</tr>
-				
-				
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] <%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">请勿直接像支付宝收款人付款，必须进入官网后进行充值</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">18/<em style="color:#ff4800;">930</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">爱尚你在的生活</a></p><p style="color:#c4c4c4;">2013-11-26</p></td>
-				</tr>
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] <%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">骗子出没，假冒客服要求转账或是索要密码，谨防受骗</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">38/<em style="color:#ff4800;">5077</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">引领风尚</a></p><p style="color:#c4c4c4;">2013-11-28</p></td>
-				</tr>
-				
-				
-				<tr class="bbs-tr2">
-					<td class="bbs-td1"><%= image_tag 'bbs-icon1.jpg' %>[ 精华 ] <%= image_tag 'bbs-icon2.jpg' %><a target="_blank" href=""><span style="font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;">请勿直接像支付宝收款人付款，必须进入官网后进行充值</span></a></td>
-					<td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
-					<td class="bbs-td3">18/<em style="color:#ff4800;">930</em></td>
-					<td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">爱尚你在的生活</a></p><p style="color:#c4c4c4;">2013-11-26</p></td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="pager_wrap">
-              <div id="pagination" class="pagination left">
-                  <a href="#" class="prev">&lt;</a>
-                  <a href="#">1</a>
-                  <a href="#">2</a>
-                  <span class="current">3</span>
-                  <a href="#">4</a><a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <span>...</span>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#" class="next">&gt;</a>
-              </div>
-              <div class="right jumppage"><span>跳转：<input size="3" type="text" /></span><span>页</span><a href="">GO</a></div>
-          </div><!--pager_wrap-->
-	</div>
+<div id="container" class="bound">
+  <%= render 'bbs_head' %>
+  <div class="bbs_list_wrap">
+    <table width="1002" border="0">
+      <tbody>
+      <tr class="bbs-tr1">
+        <td class="bbs-td1" width="625">主题</td>
+        <td class="bbs-td2" width="115">所在版块</td>
+        <td class="bbs-td3" width="115">回复查看</td>
+        <td class="bbs-td4">最后发表</td>
+      </tr>
+
+      <% @posts.each do |post| %>
+          <tr class="bbs-tr2">
+            <td class="bbs-td1">
+              <%= image_tag 'bbs-icon1.jpg' %>[ 精华 ]<%= image_tag 'bbs-icon2.jpg' %>
+              <%= link_to post.content,
+                          {
+                                  :controller => 'posts',
+                                  :action => 'show',
+                                  :id => post.id},
+                          {
+                                  :target => '_blank',
+                                  :style => 'font-size:14px; margin-left:5px; color:#FF0000;font-weight:bold;'
+                          }
+              %></td>
+            <td class="bbs-td2"><a href="" style="color:#3372a2;">官方公告</a></td>
+            <td class="bbs-td3">38/<em style="color:#ff4800;">5077</em></td>
+            <td class="bbs-td4"><p><a href="" target="_blank" style="color:#3372a2;">引领风尚</a></p>
+
+              <p style="color:#c4c4c4;"><%= post.created_at %></p></td>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+
+    <%= render 'pager_wrap' %>
+  </div>
 </div>
 <!--container end-->
 

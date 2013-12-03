@@ -1,0 +1,35 @@
+<div class="content-user-tp"><b></b></div>
+<div class="usercenter_left left">
+  <div class="user-subnav">
+    <dl class="user-subnav-group">
+      <dt><a class="item-wrap" href=""><span>首页</span></a></dt>
+    </dl>
+    <b class="user-subnav-spl"></b>
+    <dl class="user-subnav-group">
+      <dt><span class="item-wrap"><span>应用信息</span></span></dt>
+      <dd><%= link_to '交易明细', {:controller => 'users', :action => 'transaction', :user_id => session[:user_id]}, {:class => 'item-wrap'} %></dd>
+      <dd><%= link_to '资料修改', {:controller => 'users', :action => 'edit', :id => session[:user_id]}, {:class => 'item-wrap'} %></dd>
+      <dd><%= link_to '站内短信', {:controller => 'users', :action => 'message'}, {:class => 'item-wrap'} %></dd>
+    </dl>
+    <b class="user-subnav-spl"></b>
+    <dl class="user-subnav-group">
+      <dt><span class="item-wrap"><span>我的货币</span></span></dt>
+      <dd><%= link_to '账户充值', {:controller => 'users', :action => 'recharge', :user_id => session[:user_id]}, {:class => 'item-wrap'} %></dd>
+      <dd><a class="item-wrap" href="tixian.asp"><span>提现申请</span></a></dd>
+      <dd><a class="item-wrap" href="/platform/gift.asp"><span>申请VIP</span></a></dd>
+    </dl>
+    <b class="user-subnav-spl"></b>
+    <dl class="user-subnav-group">
+      <dt><span class="item-wrap"><span>账号管理</span></span></dt>
+      <dd><%= link_to '密码管理', {:controller => 'admin', :action => 'password'}, {:class => 'item-wrap'} %> </dd>
+      <dd><%= link_to '我的家园', {:controller => 'posts', :action => 'index'}, {:class => 'item-wrap'} %></dd>
+      <dd><a class="item-wrap" href="NewPushAd.asp"><span>我的推广</span></a></dd>
+    </dl>
+
+    <b class="user-subnav-spl"></b>
+    <dl class="user-subnav-group">
+      <dt><span class="item-wrap"><span>投诉中心</span></span></dt>
+      <dd><a class="item-wrap" href="myShensuList.asp"><span>投诉列表</span></a></dd>
+    </dl>
+  </div>
+</div>
